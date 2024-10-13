@@ -9,9 +9,22 @@ GOAL:
 
 Frontend :
 Pages 
-
-Backend/database :
+    
+Backend:
 Route-> model (class)-> query
+
+Database:
+
+Users
+    Username
+    Password
+Hotspot
+    Address
+    Start (datetime)
+    End (datetime)
+    Hobby
+    Users
+
 
 
 
