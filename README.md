@@ -1,7 +1,7 @@
 # Hobby-finder
 
 Web app to help find people with similiar hobbies around your area to meet up and do said hobbies. 
-Will be using PERN stack. Didn't want to pay for PaaS lol. 
+Will be using PERN stack
 
 GOAL:
 1. Create a timed hobby hotspot for a particular location
