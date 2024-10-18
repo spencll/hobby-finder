@@ -9,7 +9,9 @@ GOAL:
 
 Frontend :
 Pages 
-    
+    Home 
+    Hotspot search    
+
 Backend:
 Route-> model (class)-> query
 
