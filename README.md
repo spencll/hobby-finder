@@ -7,25 +7,25 @@ GOAL:
 1. Create a timed hobby hotspot for a particular location
 2. Users can join hotspot. 
 
-Frontend :
+Frontend:
+
 Pages 
     Home 
-    Hotspot search    
+    Hotspot search
 
 Backend:
 Route-> model (class)-> query
 
 Database:
-
-Users
-    Username
-    Password
-Hotspot
-    Address
-    Start (datetime)
-    End (datetime)
-    Hobby
     Users
+        Username
+        Password
+    Hotspot
+        Address
+        Start (datetime)
+        End (datetime)
+        Hobby
+        Users
 
 
 
