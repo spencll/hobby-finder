@@ -14,9 +14,21 @@ Pages
     Hotspot search
 
 Backend:
+
 Route-> model (class)-> query
+GET
+    Finding hobby hotspots
+POST
+    Creating new hotspot
+UPDATE:
+    Joining hotspot
+DELETE:
+    Removing hotspot
+    Removing user from hotspot
+    
 
 Database:
+
     Users
         Username
         Password
