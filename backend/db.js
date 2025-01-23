@@ -1,16 +1,21 @@
 "use strict";
 /** Database setup for eyEHR. */
-const { Client } = require("pg");
+const { MongoClient } = require("mongodb");
 const { getDatabaseUri } = require("./config");
 
-const db = process.env.NODE_ENV === "production"
-  ? new Client({
-      connectionString: getDatabaseUri(),
-      ssl: { rejectUnauthorized: false }
-    })
-  : new Client({
-      connectionString: getDatabaseUri()
-    });
+const dbUri = getDatabaseUri();
 
-db.connect();
-module.exports = db;
+const client = new MongoClient(dbUri)
+
+async function connectDB() {
+  try {
+    await client.connect();
+    console.log("Connected to MongoDB");
+  } catch (err) {
+    console.error("Failed to connect to MongoDB", err);
+  }
+}
+
+connectDB();
+
+module.exports = client;
