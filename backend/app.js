@@ -22,8 +22,15 @@ async function connectDB() {
 }
 
 // Routes
-app.get("/", (req, res) => {
-  res.send("Welcome to Hobby");
+app.get("/", async (req, res) => {
+  try {
+    const db = client.db('hobby');
+    const collection = db.collection('myCollection');
+    const documents = await collection.find({}).toArray();
+    res.status(200).json(documents);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 // Example route to fetch data from MongoDB

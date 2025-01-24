@@ -3,6 +3,7 @@
 Web app to help find people meet others with similiar hobbies. 
 
 Tech stack: 
+Database: 
 
 User flow:
 
