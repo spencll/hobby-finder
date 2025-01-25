@@ -25,7 +25,7 @@ async function connectDB() {
 app.get("/", async (req, res) => {
   try {
     const db = client.db('hobby');
-    const collection = db.collection('myCollection');
+    const collection = db.collection('users');
     const documents = await collection.find({}).toArray();
     res.status(200).json(documents);
   } catch (err) {

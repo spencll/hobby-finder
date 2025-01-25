@@ -14,11 +14,11 @@ async function connectDB() {
     const db = client.db('hobby');
     await db.dropDatabase();
     
-    const collection = db.collection('myCollection');
+    const collection = db.collection('users');
     const result = await collection.insertOne({
-      name: "Reading",
-      type: "Leisure",
-      frequency: "Weekly"
+      username: "username",
+      password: "password"
+    
     });
 
     console.log("Connected to MongoDB");
