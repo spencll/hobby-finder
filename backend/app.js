@@ -4,9 +4,11 @@
 const express = require("express");
 const client = require("./db"); // Import the MongoDB client
 const { MongoClient } = require("mongodb");
-
 const app = express();
 const PORT = process.env.PORT || 3000;
+const usersRoutes = require('./routes/users');
+
+app.use("/users", usersRoutes);
 
 // Middleware
 app.use(express.json()); // To parse JSON bodies
@@ -20,6 +22,8 @@ async function connectDB() {
     console.error("Failed to connect to MongoDB", err);
   }
 }
+
+
 
 // Routes
 app.get("/", async (req, res) => {
