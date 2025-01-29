@@ -49,7 +49,7 @@ Database:
         Username
         Password
     Hobby
-        Address
+        Link to address (google maps)
         Available date/times (datetime)
         Hobby
         Users

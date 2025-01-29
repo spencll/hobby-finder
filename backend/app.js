@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const { getDatabaseUri } = require("./config");
 
 // Middleware
-app.use(express.json()); // To parse JSON bodies
+app.use(express.json()); 
 app.use("/users", usersRoutes);
 
 // Connect to the MongoDB database
@@ -21,6 +21,7 @@ async function connectDB() {
     console.error("Failed to connect to MongoDB", err);
   }
 }
+ 
 
 // Routes
 app.get("/", async (req, res) => {
