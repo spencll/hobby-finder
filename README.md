@@ -33,7 +33,19 @@ Pages
 
 Backend:
 
-Route-> model (class)-> query
+Model (class) with queries -> routes 
+    Models
+        User
+        Hobby
+    Routes
+        Auth
+        Users
+        Hobbies
+    Middleware
+        Auth
+
+
+
 GET
     Finding hobby hotspots
 POST
