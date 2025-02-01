@@ -43,6 +43,7 @@ Model (class) with queries -> routes
         Hobbies
     Middleware
         Auth
+        
 
 
 
