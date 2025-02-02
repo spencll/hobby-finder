@@ -37,6 +37,12 @@ Model (class) with queries -> routes
     Models
         User
         Hobby
+        Hotspots
+            Owner
+            Hobby
+            Locations
+            Available times
+            Attendees
     Routes
         Auth
         Users

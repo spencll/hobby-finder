@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema({
+const hobbySchema = new mongoose.Schema({
     hobby: { type: String, required: true },
+    
     
 });
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('Hobby', hobbySchema);
 
 module.exports = User;
