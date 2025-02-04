@@ -6,10 +6,13 @@ const PORT = process.env.PORT || 3000;
 const usersRoutes = require('./routes/users');
 const mongoose = require('mongoose');
 const { getDatabaseUri } = require("./config");
+const { authenticateJWT } = require("./middleware/auth")
 
 // Middleware
 app.use(express.json()); 
 app.use("/users", usersRoutes);
+app.use(authenticateJWT);
+
 
 // Connect to the MongoDB database
 async function connectDB() {
@@ -21,9 +24,8 @@ async function connectDB() {
     console.error("Failed to connect to MongoDB", err);
   }
 }
- 
 
-// Routes
+// Routes 
 app.get("/", async (req, res) => {
   try {
     const db = mongoose.connection.db;

@@ -2,8 +2,7 @@
 
 Web app to help find people meet others with similiar hobbies. 
 
-Tech stack: 
-Database: 
+Tech stack: MERN
 
 User flow:
 
@@ -49,6 +48,15 @@ Model (class) with queries -> routes
         Hobbies
     Middleware
         Auth
+
+Front end:
+    Registration/Login Page: Form for user authentication.
+    Add Hobby Form: Input form to add hobbies, locations, and available times.
+    Search Page: Filter and display search results.
+    Notification System: Notification UI for accepting/rejecting meetups.
+    User Profile: Manage hobbies and locations, view notifications.
+State Management:
+    Redux for practice, never used before 
         
 
 
