@@ -4,7 +4,6 @@
 const jwt = require("jsonwebtoken");
 const { SECRET_KEY } = require("../config");
 const { UnauthorizedError } = require("../expressError");
-const Patient = require("../models/patient");
 
 /** Middleware: Authenticate user.
  *
@@ -59,22 +58,6 @@ function isHCP(req, res, next) {
 // Misnamed, should be ensureCorrectPatientOrHCP
 // Leaving it alone to avoid having to rewrite tests
 
-async function ensureCorrectUserOrHCP(req, res, next) {
-  try {
-    // Logged in user
-    const user = res.locals.user;
-    // Getting patient via parem patient id
-    const patient = await Patient.get(req.params.pid)
-
-    // Checking correct user via common email 
-    if (!(user && (user.isHCP || patient.email === user.email))) {
-      throw new UnauthorizedError();
-    }
-    return next();
-  } catch (err) {
-    return next(err);
-  }
-}
 
 
 async function ensureCorrectUser(req, res, next) {
@@ -99,6 +82,5 @@ module.exports = {
   authenticateJWT,
   ensureLoggedIn,
   isHCP,
-  ensureCorrectUserOrHCP,
   ensureCorrectUser
 };

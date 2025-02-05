@@ -4,6 +4,7 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3000;
 const usersRoutes = require('./routes/users');
+const authRoutes = require('./routes/auth');
 const mongoose = require('mongoose');
 const { getDatabaseUri } = require("./config");
 const { authenticateJWT } = require("./middleware/auth")
@@ -11,7 +12,8 @@ const { authenticateJWT } = require("./middleware/auth")
 // Middleware
 app.use(express.json()); 
 app.use("/users", usersRoutes);
-app.use(authenticateJWT);
+app.use("/auth", authRoutes);
+
 
 
 // Connect to the MongoDB database
