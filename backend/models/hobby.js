@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
 
 const hobbySchema = new mongoose.Schema({
-    hobby: { type: String, required: true },
+    name: String,
+    description: String,
+    users: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }]
     
     
 });
 
-const User = mongoose.model('Hobby', hobbySchema);
+const Hobby = mongoose.model('Hobby', hobbySchema);
 
-module.exports = User;
+module.exports = Hobby;

@@ -1,5 +1,6 @@
 const express = require('express');
 const User = require('../models/user'); // Update the path to your User model
+const Hobby = require('../models/hobby')
 
 const router = express.Router();
 
@@ -14,6 +15,7 @@ router.post('/add', async (req, res) => {
     }
 });
 
+
 // User registration
 router.post('/register', async (req, res) => {
     try {
@@ -24,6 +26,18 @@ router.post('/register', async (req, res) => {
         res.status(400).send(error);
     }
 });
+
+// Create hobby
+router.post('/addHobby', async (req, res) => {
+    try {
+        const hobby = new Hobby(req.body);
+        await hobby.save()
+        res.status(201).send(hobby);
+    } catch (error) {
+        res.status(400).send(error);
+    }
+});
+
 
 // User login
 router.post('/login', async (req, res) => {
