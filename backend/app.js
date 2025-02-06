@@ -31,13 +31,20 @@ async function connectDB() {
 app.get("/", async (req, res) => {
   try {
     const db = mongoose.connection.db;
-    const collection = db.collection('users');
-    const documents = await collection.find({}).toArray();
-    res.status(200).json(documents);
+    const usersCollection = db.collection('users');
+    const hobbiesCollection = db.collection('hobbies');
+
+    const [users, hobbies] = await Promise.all([
+      usersCollection.find({}).toArray(),
+      hobbiesCollection.find({}).toArray()
+    ]);
+
+    res.status(200).json({ users, hobbies });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 });
+
 
 // Start the server
 app.listen(PORT, () => {
