@@ -38,24 +38,12 @@ router.post('/addHobby', async (req, res) => {
     }
 });
 
-// Create hobby
+// Find specific hobby
 router.post('/getHobby', async (req, res) => {
     const {name} = req.body
     try {
         const hobby = await Hobby.findOne({name});
         res.status(201).send(hobby);
-    } catch (error) {
-        res.status(400).send(error);
-    }
-});
-
-
-// User login
-router.post('/login', async (req, res) => {
-    try {
-        // Implement your login logic here
-        // For example, verify credentials, generate token, etc.
-        res.status(200).send({ message: 'Login successful' });
     } catch (error) {
         res.status(400).send(error);
     }
