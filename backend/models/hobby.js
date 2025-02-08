@@ -8,6 +8,10 @@ const hobbySchema = new mongoose.Schema({
     
 });
 
+hobbySchema.statics.findByHobby = function(hobby) {
+    return this.find({ name: new RegExp(hobby, 'i') }); // Case-insensitive search
+  };
+
 const Hobby = mongoose.model('Hobby', hobbySchema);
 
 module.exports = Hobby;

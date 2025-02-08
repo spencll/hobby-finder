@@ -15,7 +15,6 @@ router.post('/add', async (req, res) => {
     }
 });
 
-
 // User registration
 router.post('/register', async (req, res) => {
     try {
@@ -39,6 +38,16 @@ router.post('/addHobby', async (req, res) => {
 });
 
 // Find specific hobby
+router.get('/:hobby', async (req, res) => {
+    try {
+      const hobby = await Hobby.findByHobby(req.params.name);
+      res.json(hobby);
+    } catch (err) {
+      res.status(500).send(err);
+    }
+  });
+
+
 router.post('/getHobby', async (req, res) => {
     const {name} = req.body
     try {
