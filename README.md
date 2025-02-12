@@ -35,13 +35,21 @@ Backend:
 Model (class) with queries -> routes 
     Models
         User
+            Username 
+            Password
         Hobby
         Hotspots
             Owner
             Hobby
-            Locations
+            State 
+            Address 
             Available times
             Attendees
+            
+        userHotspotSchema (links users to hotspot)
+            User id
+            Hotspot id
+
     Routes
         Auth
         Users

@@ -1,19 +1,29 @@
 const express = require('express');
 const User = require('../models/user'); // Update the path to your User model
 const Hobby = require('../models/hobby')
-
 const router = express.Router();
 
-// Create a new user.
-router.post('/add', async (req, res) => {
+//Logged in actions
+router.get('/users/:username', async (req, res) => {
     try {
-        const user = new User(req.body);
-        await user.save()
-        res.status(201).send(user);
+      const { username } = req.params;
+      const user = await User.findOne({ username });
+  
+      if (!user) {
+        return res.status(404).send({ message: 'User not found' });
+      }
+  
+      res.send(user);
     } catch (error) {
-        res.status(400).send(error);
+      res.status(500).send({ message: 'Server error', error });
     }
-});
+})
+
+
+
+
+
+
 
 // User registration
 router.post('/register', async (req, res) => {
