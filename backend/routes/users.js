@@ -3,8 +3,10 @@ const User = require('../models/user'); // Update the path to your User model
 const Hobby = require('../models/hobby')
 const router = express.Router();
 
-//Logged in actions
-router.get('/users/:username', async (req, res) => {
+//Param stuff
+
+// Should be protected to only the logged in user. 
+router.get('/:username', async (req, res) => {
     try {
       const { username } = req.params;
       const user = await User.findOne({ username });
@@ -18,11 +20,6 @@ router.get('/users/:username', async (req, res) => {
       res.status(500).send({ message: 'Server error', error });
     }
 })
-
-
-
-
-
 
 
 // User registration

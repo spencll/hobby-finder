@@ -4,6 +4,7 @@ const Schema = mongoose.Schema
 const HotspotSchema = new Schema({
     time: Date,
     location: String,
+    state: String,
     hobby: { type: Schema.Types.ObjectId, ref: 'Hobby' },
     participants: [{ type: Schema.Types.ObjectId, ref: 'User' }]
   });

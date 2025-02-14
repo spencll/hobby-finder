@@ -1,19 +1,24 @@
 # Hobby-finder
 
-Web app to help find people meet others with similiar hobbies. 
+Web app to help find people meet others with similiar hobbies with minimal data footprint. 
+Anonymous profile. No A/S/L. Meet up should solely be focused on the hobby.
+
+No information exchanged from user to user. Not even chat option. Only data exchanged is username and hotspot attendence. 
+
+Motivation to make app: Promoting offline connections through mutual interest. 
 
 Tech stack: MERN
 
 User flow:
 
 Online
-1. User adds hobby and designated public location to meet up. Attached to location is available day/times. 
-2. Other users can query by hobby, location, and available day/times.
+1. User adds hotspot to hobby and designated public location to meet up. Attached to location is available day/times. 
+2. Other users can query by hobby, state, and available day/times.
 3. Having other user select day/time sends notification to original user to either accept/reject. Can have multiple users join same day/time. 
-4. Hobby/location still persists even after meet up until removed by user. 
+4. If original user accepts, original user sends identifiers (clothing, car color, seating location, username). No links or number allowed.
 
 Offline
-1. Meet at designated place day/time.
+1. Meet at designated place day/time. Recommend to plan for no shows. 
 2. Get to know other person and hobby interest. Also screen for any red flags. 
 3. Can then plan logistics to do said hobby and exchange contact info.
 
