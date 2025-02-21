@@ -1,4 +1,4 @@
 
 
-// Get available hotspots for hobby
-// Get hotspots in a given state 
+// Get all users for a certain hotspot
+// Get all hotspots for a certain user

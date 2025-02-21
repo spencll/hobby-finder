@@ -3,9 +3,9 @@
 Web app to help find people meet others with similiar hobbies with minimal data footprint. 
 Anonymous profile. No A/S/L. Meet up should solely be focused on the hobby.
 
-No information exchanged from user to user. Not even chat option. Only data exchanged is username and hotspot attendence. 
+No information exchanged from user to user. Not even chat option. 
 
-Motivation to make app: Promoting offline connections through mutual interest. 
+Motivation to make app: Promoting offline connections through mutual interest and free time. 
 
 Tech stack: MERN
 
@@ -14,8 +14,8 @@ User flow:
 Online
 1. User adds hotspot to hobby and designated public location to meet up. Attached to location is available day/times. 
 2. Other users can query by hobby, state, and available day/times.
-3. Having other user select day/time sends notification to original user to either accept/reject. Can have multiple users join same day/time. 
-4. If original user accepts, original user sends identifiers (clothing, car color, seating location, username). No links or number allowed.
+3. Having other user select day/time sends notification to original user to either accept/reject. Can have multiple users join same day/time if specified. 
+4. If original user accepts, original user sends identifiers (clothing, car color, seating location, username). No links or number allowed to prevent phishing/spam. 
 
 Offline
 1. Meet at designated place day/time. Recommend to plan for no shows. 
@@ -57,8 +57,14 @@ Model (class) with queries -> routes
 
     Routes
         Auth
+            /token
+            /register
         Users
+            /
         Hobbies
+            /hobby id
+                /hotspots
+                
     Middleware
         Auth
 
