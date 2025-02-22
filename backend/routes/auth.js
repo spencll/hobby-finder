@@ -44,7 +44,8 @@ router.post('/login', async (req, res) => {
 
 // Middleware to protect routes (example)
 const authMiddleware = (req, res, next) => {
-    // Implement your authentication check logic here
+    // Can only access your own stuff if logged in 
+    
     next();
 };
 

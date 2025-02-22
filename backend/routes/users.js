@@ -5,7 +5,7 @@ const router = express.Router();
 
 //Param stuff
 
-// Should be protected to only the logged in user. 
+// Can visit other user profiles. 
 router.get('/:username', async (req, res) => {
     try {
       const { username } = req.params;

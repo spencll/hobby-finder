@@ -12,7 +12,7 @@ Tech stack: MERN
 User flow:
 
 Online
-1. User adds hotspot to hobby and designated public location to meet up. Attached to location is available day/times. 
+1. User adds hotspot to hobby with designated public location to meet up. Also option for virtual. Attached is available day/times. 
 2. Other users can query by hobby, state, and available day/times.
 3. Having other user select day/time sends notification to original user to either accept/reject. Can have multiple users join same day/time if specified. 
 4. If original user accepts, original user sends identifiers (clothing, car color, seating location, username). No links or number allowed to prevent phishing/spam. 
@@ -60,13 +60,15 @@ Model (class) with queries -> routes
             /token
             /register
         Users
-            /
+            /:username
         Hobbies
             /hobby id
                 /hotspots
-                
+
     Middleware
-        Auth
+        Need to be logged in to...
+            Add hobby
+            Add hotspot to hobby
 
 Front end:
     Registration/Login Page: Form for user authentication.
